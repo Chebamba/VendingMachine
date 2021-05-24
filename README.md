@@ -21,11 +21,10 @@ Vending Machine Console Application based on Spring Boot, Spring data JPA, Maven
     * Purchase (purchase) `purchase` console command - purchase a single snack item `name, date`
     * List (list) `list` console command - show list of served categories with amount of items available for sale sorted by amount
     * Clear (clear) `clear` console command — stop serving all snack categories that don’t have items for sale (items can not be purchased)
-    * Report by date (report) `report` console command — show earnings by category in specified month. Command accepts the following parameters: `YYYY-MM-DD`
+    * Report by date (report) `report` console command — show earnings by category gained since provided date till now sorted by category name. Command accepts the following parameters:`YYYY-MM-DD`
     * Report by month (report) `report` console command - show earnings by category in specified month. Command accepts the following parameters: `YYYY-MM`
 * Input validation of `command`, `YYYY-MM-DD`, `YYYY-MM`
 * Unit tests
-
 
 ## Requirements
 
@@ -36,17 +35,21 @@ Vending Machine Console Application based on Spring Boot, Spring data JPA, Maven
     - [IntelliJ Idea](https://www.jetbrains.com/idea/)
 
 ## How to run the application
-To run this application you have to :
-
+- To run this application you have to :
 ```bash
+# Create directory
+$ mkdir VendingMachine
+$ cd VendgingMachine
 # Clone this repository
 $ git clone https://github.com/Chebamba/VendingMachine.git
 # Go into the repository
 $ cd VendingMachine
-# Run this class in IntelliJ Idea VendingMachineApplication
-# There are another way to run this project
+# Run this class "VendingMachineApplication" in IntelliJ Idea
+```
+### There is another way to run this project
+```bash
 # Write this command in terminal:
-  -mvn springboot:run
+$ mvn springboot:run
 ```
 
 ## Add category command example:
