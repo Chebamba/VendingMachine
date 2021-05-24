@@ -16,7 +16,6 @@ import java.util.stream.Collectors;
 @Component
 @RequiredArgsConstructor
 public class PurchaseService {
-
     private final PurchaseRepository purchaseRepository;
     private final CategoryRepository categoryRepository;
 
@@ -58,7 +57,7 @@ public class PurchaseService {
 
     private void displayReport(List<Purchase> purchases) {
 
-        List<ReportQuantity> reportQuantityList = convertPurchasesIntoDtoList(purchases);
+        List<ReportQuantity> reportQuantityList = convertPurchasesIntoReportQuantityList(purchases);
 
         reportQuantityList.forEach(dto -> System.out.println(dto.getCategoryName() + " " + dto.getPrice() + " " + dto.getQuantity()));
 
@@ -67,7 +66,7 @@ public class PurchaseService {
         System.out.println("> Total " + sum);
     }
 
-    private List<ReportQuantity> convertPurchasesIntoDtoList(List<Purchase> purchases) {
+    private List<ReportQuantity> convertPurchasesIntoReportQuantityList(List<Purchase> purchases) {
         Map<Category, List<Purchase>> purchasesByCategory = purchases.stream().collect(Collectors.groupingBy(Purchase::getCategory));
 
         return purchasesByCategory.entrySet()
